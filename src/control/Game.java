@@ -24,12 +24,13 @@ public class Game {
 		this.hero.addAction(new Stun());
 		this.hero.setBoundary(height, width);
 		this.hero.setLocation(new Point(5, 1));
+		this.hero.setHitbox(0, 0, 1, 1);
 		((WindowInteractions) ui).setHeroStats((Hero) hero);
 		
         this.monster = new Monster("Monster", 200, 1000, 2, 10);
-		this.monster.addAction(new Stun());
 		this.monster.setBoundary(height, width);
 		this.monster.setLocation(new Point(5, 5));
+		this.monster.setHitbox(4, 12, 8, 6);
 		((WindowInteractions) ui).setMonsterStats((Monster) monster);
 		
     }

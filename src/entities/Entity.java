@@ -19,6 +19,8 @@ public abstract class Entity {
     protected State state;
     protected Point location;
 	protected Point size;
+    protected Point hitLoc;
+	protected Point hitSize;
     protected Point boundary;
 	protected String figureAction;
     protected List<Action> availableActions;
@@ -72,6 +74,20 @@ public abstract class Entity {
 		return this.location;
 	}
 	
+	public Point calHitLocByNewPos(Point p) {
+		int x = p.x + this.hitLoc.x;
+		int y = p.y + this.hitLoc.y;
+		return new Point(x, y);
+	}
+	
+	public Point getHitLoc() {
+		return calHitLocByNewPos(this.location);
+	}
+	
+	public Point getHitSize() {
+		return this.hitSize;
+	}
+	
 	public String getFigureAction() {
 		return this.figureAction;
 	}
@@ -99,6 +115,11 @@ public abstract class Entity {
 		this.size = new Point(x, y);
 	}
 	
+	public void setHitbox(int x, int y, int sizeX, int sizeY) {
+		this.hitLoc = new Point(x, y);
+		this.hitSize = new Point(sizeX, sizeY);
+	}
+	
 	public void setLocation(Point newPoint) {
 		if (outOfBounds(newPoint))
 			throw new java.lang.RuntimeException("New location out of bounds");
@@ -107,11 +128,12 @@ public abstract class Entity {
 	}
 	
 	public void setLocation(Point newPoint, Entity target) {
+		
 		int distance = Toolkit.calDistance(
-			newPoint,
-			this.getSize(),
-			target.getLocation(),
-			target.getSize()
+			calHitLocByNewPos(newPoint),
+			getHitSize(),
+			target.getHitLoc(),
+			target.getHitSize()
 		);
 		
 		System.out.println(distance);

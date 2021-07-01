@@ -24,10 +24,10 @@ public abstract class Action {
     protected boolean inReach(Entity user, Entity enemy) {
 		
 		int distance = Toolkit.calDistance(
-			user.getLocation(),
-			user.getSize(),
-			enemy.getLocation(),
-			enemy.getSize()
+			user.getHitLoc(),
+			user.getHitSize(),
+			enemy.getHitLoc(),
+			enemy.getHitSize()
 		);
 		
         return distance <= this.effectiveDistance;

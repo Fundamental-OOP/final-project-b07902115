@@ -85,7 +85,7 @@ public class PaneGenerator {
         addText(pane, "Hero's Hp", 1, 22, 4, 1.5);
         addBar(pane, HeroHPP, 5, 22, 8, 1.5);
         addText(pane, "STA remain:  " + HeroSTA, 15, 22, 6, 1.5);
-        addText(pane, "State:  " + CurrentState, 21, 22, 8, 1.5);
+        addText(pane, "State:  " + CurrentState, 21, 22, 9, 1.5);
         addText(pane, StringToShow, 0, 23, 32, 1.5);
     }
 	
@@ -103,7 +103,7 @@ public class PaneGenerator {
             }
         }
 
-        addText(pane, msg, 10, 21, 10, 1.5);
+        addText(pane, msg, 10, 24, 10, 1.5);
         addText(pane, "Thanks for playing.", 10, 22, 10, 1.5);
     }
 
