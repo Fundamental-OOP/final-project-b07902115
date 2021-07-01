@@ -103,7 +103,7 @@ public class PaneGenerator {
             }
         }
 
-        addText(pane, msg, 10, 24, 10, 1.5);
+        addText(pane, msg, 10, 22, 10, 1.5);
         addText(pane, "Thanks for playing.", 10, 22, 10, 1.5);
     }
 
