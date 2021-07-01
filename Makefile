@@ -1,7 +1,11 @@
 
 java_code = src/*.java src/control/*.java src/entities/*.java src/actions/*.java src/states/*.java \
             src/utils/*.java src/GUI/*.java
-all: out
+all: run
+
+run:
+	make out
+	sh run.sh
 
 out: $(java_code)
 	-rm -rf out

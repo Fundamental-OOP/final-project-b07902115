@@ -167,17 +167,6 @@ public class PaneGenerator {
         c.weighty = h;
         pane.add(textLabel, c);
     }
-	// public void addText(Container pane, String msg, int x, int y, int w, double h){
-    //     GridBagConstraints c = new GridBagConstraints();
-    //     JLabel textLabel = new JLabel();
-    //     textLabel.setText(msg);
-    //     textLabel.setFont(new Font("", Font.PLAIN, 24));
-    //     c.gridx = x;
-    //     c.gridy = y;
-    //     c.gridwidth = w;
-    //     c.weighty = h;
-    //     pane.add(textLabel, c);
-    // }
 	
     public void randomize(GrassType[][] map){
         Random rand = new Random();

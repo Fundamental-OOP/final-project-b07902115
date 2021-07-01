@@ -13,6 +13,7 @@ public class GUI implements UI, WindowInteractions {
     private Window window;
 	private GUIKeyListener kl;
 	private CountDownLatch doneSignal;
+	
     public GUI() {
 		kl = new GUIKeyListener(doneSignal);
 		kl.setEnabled(false);
@@ -138,89 +139,3 @@ public class GUI implements UI, WindowInteractions {
 		window.setBossSize(monster.getSize());
 	}
 }
-
-// class GUIKeyListener extends KeyAdapter {
-//     private Window window;
-// 	private int keyCode;
-// 	private boolean enabled = true;
-// 	private CountDownLatch doneSignal;
-// 
-//     GUIKeyListener(CountDownLatch doneSignal){
-// 		resetMove(doneSignal);
-//     }
-// 	
-// 	public void setEnabled(boolean enabled) {
-// 		this.enabled = enabled;
-// 	}
-// 	
-// 	public Direction getMove() {
-// 		Direction result = Direction.NONE;
-// 		
-// 		switch(keyCode){
-// 			case KeyEvent.VK_UP:    // UP
-// 				result = Direction.UP;
-// 				break;
-// 			case KeyEvent.VK_LEFT:  // Left
-// 				result = Direction.LEFT;
-// 				break;
-// 			case KeyEvent.VK_DOWN:  // DOWN
-// 				result = Direction.DOWN;
-// 				break;
-// 			case KeyEvent.VK_RIGHT: // Right
-// 				result = Direction.RIGHT;
-// 				break;
-// 			case KeyEvent.VK_W:     // UP
-// 				result = Direction.UP;
-// 				break;
-// 			case KeyEvent.VK_A:     // Left
-// 				result = Direction.LEFT;
-// 				break;
-// 			case KeyEvent.VK_S:     // DOWN
-// 				result = Direction.DOWN;
-// 				break;
-// 			case KeyEvent.VK_D:     // Right
-// 				result = Direction.RIGHT;
-// 				break;
-// 			case KeyEvent.VK_H:
-// 				result = Direction.HOLD;
-// 				break;
-// 			case KeyEvent.VK_SPACE:
-// 				result = Direction.HOLD;
-// 				break;
-// 			default:
-// 				throw new java.lang.RuntimeException("Invalid input!");
-// 		}
-// 		
-// 		return result;
-// 	}
-// 	
-// 	public int getActionIndex(int numActions) {
-// 		int result = keyCode - KeyEvent.VK_0;
-// 		if(result < 0 || result >= numActions)
-// 			throw new java.lang.RuntimeException("Invalid choice of action");
-// 		return result;
-// 	}
-// 	
-// 	public void resetMove(CountDownLatch doneSignal) {
-// 		keyCode = 0;
-// 		this.doneSignal = doneSignal;
-// 	}
-// 
-//     public void keyTyped(KeyEvent e) {
-//         //window.setStringToShow("keyTyped");
-//         //System.out.println("keyTyped");
-//     }
-// 
-//     public void keyPressed(KeyEvent e) {
-// 		if(!enabled)
-// 			return;
-// 		keyCode = e.getKeyCode();
-// 		doneSignal.countDown();
-//         // System.out.println("keyPressed" + e.getKeyCode());
-//     }
-// 
-//     public void keyReleased(KeyEvent e) {
-//         //window.setStringToShow("keyReleased");
-//         //System.out.println("keyReleased");
-//     }
-// }

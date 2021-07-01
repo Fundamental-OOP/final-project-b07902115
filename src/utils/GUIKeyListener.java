@@ -72,8 +72,7 @@ public class GUIKeyListener extends KeyAdapter {
 	}
 
     public void keyTyped(KeyEvent e) {
-        //window.setStringToShow("keyTyped");
-        //System.out.println("keyTyped");
+		
     }
 
     public void keyPressed(KeyEvent e) {
@@ -85,7 +84,5 @@ public class GUIKeyListener extends KeyAdapter {
     }
 
     public void keyReleased(KeyEvent e) {
-        //window.setStringToShow("keyReleased");
-        //System.out.println("keyReleased");
     }
 }
